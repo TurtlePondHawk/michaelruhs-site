@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Preferred Partner Readiness Snapshot - Form</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; line-height: 1.5; color:#333; }
+    h1 { font-size: 1.25rem; margin-bottom: .5rem; }
+    .dim { border:1px solid #ddd; padding:1rem; border-radius:.5rem; margin-bottom:1rem; }
+    .dim h2 { font-size:1rem; margin:0 0 .5rem 0; }
+    .q { margin: .5rem 0; }
+    .q label { display: inline-flex; align-items: center; gap:.4rem; }
+    .buttons { margin-top: 1rem; display:flex; gap:.5rem; flex-wrap: wrap; }
+    .results { margin-top: 1rem; padding: .75rem; border:1px solid #bbb; border-radius:.5rem; background:#f9f9f9; }
+    table { border-collapse: collapse; width: 100%; margin-top:.5rem; }
+    th, td { border:1px solid #ddd; padding:.5rem; text-align:left; font-size:.92rem; }
+    th { background:#f0f0f0; }
+    .hidden { display:none; }
+    .export { margin-left:auto; }
+    .warning { color:#b00; font-weight:bold; }
+    .score { font-size: 1.1em; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>Preferred Partner Readiness Snapshot</h1>
+  <p> This Snapshot is designed to be completed privately by the skilled home care agency owner or administrator.
+There are no right answers. It works best when you answer conservatively.
+If you’re unsure whether something would hold up consistently with referral sources or payors, mark “No.”
+All questions are required.
+Responses are stored locally in your browser.</p>
+
+  <form id="snapshotForm" autocomplete="off" aria-label="Snapshot form">
+    <!-- Dimension 1: Positioning Clarity -->
+    <section class="dim" id="dim1">
+      <h2>Dimension 1. Positioning Clarity</h2>
+      <p>This dimension looks at whether your agency has a clear, defensible position in the minds of referral partners and payors. Strong agencies are not just “good.” They are distinct. Weak positioning shows up when partners struggle to explain why they refer to you, default to habit, or treat you as interchangeable. If this area is weak, preference erodes quietly even when performance is solid.</p>
+
+      <div class="q">
+        <strong>Dimension 1, Q1:</strong>
+        <span>If a referral partner were asked what differentiates your agency, would they give a specific, consistent answer without prompting?</span>
+      </div>
+      <div class="q">
+        <label><input type="radio" name="dim1_q2" value="Yes" required/> Yes</label>
+        <label><input type="radio" name="dim1_q2" value="No" required/> No</label>
+      </div>
+      <div class="q">
+        <strong>Dimension 1, Q2:</strong>
+        <span>Can you and your partner-facing team members clearly explain who you are best suited to serve and who you are not, without hedging?</span>
+      </div>
+      <div class="q">
+        <label><input type="radio" name="dim1_q3" value="Yes" required/> Yes</label>
+        <label><input type="radio" name="dim1_q3" value="No" required/> No</label>
+      </div>
+      <div class="q">
+        <strong>Dimension 1, Q3:</strong>
+        <span>Do your website and materials reflect the same positioning you use in conversations?</span>
+      </div>
+      <div class="q">
+        <label><input type="radio" name="dim1_q4" value="Yes" required/> Yes</label>
+        <label><input type="radio" name="dim1_q4" value="No" required/> No</label>
+      </div>
+      <div class="q">
+        <strong>Dimension 1, Q4:</strong>
+        <span>If a new referral source reviewed your materials alone, would they understand why to choose you over alternatives?</span>
+      </div>
+      <div class="q">
+        <label><input type="radio" name="dim1_q1" value="Yes" required/> Yes</label>
+        <label><input type="radio" name="dim1_q1" value="No" required/> No</label>
+      </div>
+    </section>
+
+    <!-- Dimension 2: Proof and Credibility -->
+    <section class="dim" id="dim2">
+      <h2>Dimension 2. Proof and Credibility</h2>
+      <p>This dimension assesses whether your strengths are verifiable and portable, not just believed internally. Credibility is tested when: volume tightens, scrutiny increases, someone else reviews you without your involvement. Agencies with weak proof rely on reassurance. Agencies with strong proof rely on evidence that travels without them.</p>
+
+      <div class="q">
+        <strong>Dimension 2, Q1:</strong>
+        <span>Do you have specific proof points you and your partner-facing team members routinely reference when credibility is tested (examples, outcomes, cases, or patterns)?</span>
+      </div>
+
+      <div class="q">
+        <label><input type="radio" name="dim2_q2" value="Yes" required/> Yes</label>
+        <label><input type="radio" name="dim2_q2" value="No" required/> No</label>
+      </div>
+      <div class="q">
+        <strong>Dimension 2, Q2:</strong>
+        <span>Would an outside reviewer see evidence of reliability and follow-through, not just good intent?</span>
+      </div>
+
+      <div class="q">
+        <label><input type="radio" name="dim2_q3" value="Yes" required/> Yes</label>
+        <label><input type="radio" name="dim2_q3" value="No" required/> No</label>
+      </div>
+      <div class="q">
+        <strong>Dimension 2, Q3:</strong>
+        <span>Are your strengths documented in a way that travels without you being present?</span>
+      </div>
+
+      <div class="q">
+        <label><input type="radio" name="dim2_q4" value="Yes" required/> Yes</label>
+        <label><input type="radio" name="dim2_q4" value="No" required/> No</label>
+      </div>
+      <div class="q">
+        <strong>Dimension 2, Q4:</strong>
+        <span>If challenged on quality or consistency, could you and your partner-facing team members respond with facts, not assurances?</span>
+      </div>
+      <div class="q">
+        <label><input type="radio" name="dim2_q1" value="Yes" required/> Yes</label>
+        <label><input type="radio" name="dim2_q1" value="No" required/> No</label>
+      </div>
+    </section>
+
+    <!-- Dimension 3: Referral and Payor Dependence -->
+    <section class="dim" id="dim3">
+      <h2>Dimension 3. Referral and Payor Dependence</h2>
+      <p>This dimension evaluates how exposed your agency is to concentration risk and invisible behavior shifts. High dependence often feels stable until it isn’t. The risk is not losing a source suddenly. The risk is not seeing preference decay until it impacts operations. Agencies with resilience understand why they are chosen and actively reinforce those reasons before volume changes.</p>
+
+      <div class="q">
+        <strong>Dimension 3, Q1:</strong>
+        <span>Could you afford to lose your largest referral source without immediate operational distress?</span>
+      </div>
+
+      <div class="q">
+        <label><input type="radio" name="dim3_q2" value="Yes" required/> Yes</label>
+        <label><input type="radio" name="dim3_q2" value="No" required/> No</label>
+      </div>
+      <div class="q">
+        <strong>Dimension 3, Q2:</strong>
+        <span>Do you understand why your top referral sources choose you, beyond convenience or history?</span>
+      </div>
+
+      <div class="q">
+        <label><input type="radio" name="dim3_q3" value="Yes" required/> Yes</label>
+        <label><input type="radio" name="dim3_q3" value="No" required/> No</label>
+      </div>
+      <div class="q">
+        <strong>Dimension 3, Q3:</strong>
+        <span>Are you actively strengthening referral source relationships before volume changes, not after?</span>
+      </div>
+
+      <div class="q">
+        <label><input type="radio" name="dim3_q4" value="Yes" required/> Yes</label>
+        <label><input type="radio" name="dim3_q4" value="No" required/> No</label>
+      </div>
+      <div class="q">
+        <strong>Dimension 3, Q4:</strong>
+        <span>If referral behavior shifted quietly, would you see it early or only after impact?</span>
+      </div>
+      <div class="q">
+        <label><input type="radio" name="dim3_q1" value="Yes" required/> Yes</label>
+        <label><input type="radio" name="dim3_q1" value="No" required/> No</label>
+      </div>
+    </section>
+
+    <!-- Dimension 4: Operational Readiness -->
+    <section class="dim" id="dim4">
+      <h2>Dimension 4: Operational Readiness</h2>
+      <p>This dimension looks at whether your operations send a positive signal externally, not just internally. Referral partners and payors notice: friction, inconsistency, how breakdowns are handled. Operational readiness is less about perfection and more about whether your agency appears reliable under pressure and prepared for scrutiny.</p>
+
+      <div class="q">
+        <strong>Dimension 4, Q1:</strong>
+        <span>Would referral partners describe your agency as easy to work with, even under pressure?</span>
+      </div>
+
+      <div class="q">
+        <label><input type="radio" name="dim4_q2" value="Yes" required/> Yes</label>
+        <label><input type="radio" name="dim4_q2" value="No" required/> No</label>
+      </div>
+      <div class="q">
+        <strong>Dimension 4, Q2:</strong>
+        <span>Are your internal processes stable enough that growth would not degrade performance?</span>
+      </div>
+
+      <div class="q">
+        <label><input type="radio" name="dim4_q3" value="Yes" required/> Yes</label>
+        <label><input type="radio" name="dim4_q3" value="No" required/> No</label>
+      </div>
+      <div class="q">
+        <strong>Dimension 4, Q3:</strong>
+        <span>If asked how your agency handles breakdowns, could you and your partner-facing team members explain a clear, repeatable approach?</span>
+      </div>
+
+      <div class="q">
+        <label><input type="radio" name="dim4_q4" value="Yes" required/> Yes</label>
+        <label><input type="radio" name="dim4_q4" value="No" required/> No</label>
+      </div>
+      <div class="q">
+        <strong>Dimension 4, Q4:</strong>
+        <span>Would an external reviewer conclude your agency is prepared for increased scrutiny, not just current volume?</span>
+      </div>
+	
+	<div class="q">
+        <label><input type="radio" name="dim4_q1" value="Yes" required/> Yes</label>
+        <label><input type="radio" name="dim4_q1" value="No" required/> No</label>
+      </div>
+    </section>
+
+    <div class="buttons">
+      <button type="submit" id="submitBtn">Submit and Show Results</button>
+     <!-- <button type="button" id="exportBtn" class="hidden export">Export CSV</button> -->
+      <button type="button" id="resetBtn" class="export">Reset</button>
+    </div>
+  </form>
+
+  <div id="results" class="results hidden" aria-live="polite"></div>
+
+<script>
+  // Helper: collect all answers into a flat array of {dim, q, answer}
+  function collectAnswers() {
+    const result = [];
+    const form = document.getElementById('snapshotForm');
+    // Iterate over all radio groups by name
+    const names = Array.from(form.querySelectorAll('input[type="radio"]')).map(el => el.name);
+    const uniqueNames = Array.from(new Set(names));
+    uniqueNames.forEach(name => {
+      const radios = form.querySelectorAll('input[name="' + name + '"]');
+      const selected = Array.from(radios).find(r => r.checked);
+      const answer = selected ? selected.value : '';
+      // Derive dimension and question index from name if you want
+      result.push({ name, answer });
+    });
+    return result;
+  }
+
+  // Convert to CSV string (very simple)
+  function toCSV(rows) {
+    const header = ['Question', 'Answer'];
+    const lines = [header.join(',')];
+    rows.forEach(r => {
+      // sanitize for CSV
+      const q = r.name;
+      const a = r.answer;
+      lines.push(`"${q}","${a}"`);
+    });
+    return lines.join('\n');
+  }
+
+  // Export handler
+  document.getElementById('exportBtn')?.addEventListener('click', function() {
+    const answers = collectAnswers();
+    const csv = toCSV(answers);
+
+    // Create a blob and trigger download
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'snapshot-export.csv';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  });
+</script>
+
+  <script>
+    // Helpers
+    function getDimensionScore(answers, keys) {
+      // counts Yes in provided keys order
+      let count = 0;
+      for (const k of keys) {
+        if (answers[k] === 'Yes') count++;
+      }
+      return count;
+    }
+
+    function interpretation(score) {
+      if (score <= 1) return 'High risk';
+      if (score <= 3) return 'Mixed';
+      return 'Relative strength';
+    }
+
+    function interpretBlock(dimName, score) {
+      return `<strong>${dimName} score:</strong> ${score} — ${interpretation(score)}`;
+    }
+
+    // Form handling
+    const form = document.getElementById('snapshotForm');
+    const resultsDiv = document.getElementById('results');
+    const exportBtn = document.getElementById('exportBtn');
+    const resetBtn = document.getElementById('resetBtn');
+
+    // Store last submission for CSV
+    let lastSubmission = null;
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+
+      // Collect answers
+      const data = new FormData(form);
+      const answers = {};
+      for (const [k, v] of data.entries()) {
+        answers[k] = v;
+      }
+
+      // Dimension definitions (ordered question keys)
+      // Note: The exact question texts are included in the HTML; here we only map keys to counts.
+      const dim1_keys = ['dim1_q1','dim1_q2','dim1_q3','dim1_q4'];
+      const dim2_keys = ['dim2_q1','dim2_q2','dim2_q3','dim2_q4'];
+      const dim3_keys = ['dim3_q1','dim3_q2','dim3_q3','dim3_q4'];
+      const dim4_keys = ['dim4_q1','dim4_q2','dim4_q3','dim4_q4'];
+
+      const s1 = getDimensionScore(answers, dim1_keys);
+      const s2 = getDimensionScore(answers, dim2_keys);
+      const s3 = getDimensionScore(answers, dim3_keys);
+      const s4 = getDimensionScore(answers, dim4_keys);
+
+      // Build results HTML
+      const h = [];
+      h.push('<h3>Snapshot Results</h3>');
+      h.push('<table>');
+      h.push('<tr><th>Dimension</th><th>Score (0–4)</th><th>Interpretation</th><th>Notes</th></tr>');
+
+      h.push(`<tr><td>Dimension 1. Positioning Clarity</td><td>${s1}</td><td>${interpretation(s1)}</td><td>What to know next: see results section</td></tr>`);
+      h.push(`<tr><td>Dimension 2. Proof and Credibility</td><td>${s2}</td><td>${interpretation(s2)}</td><td>What to know next: see results section</td></tr>`);
+      h.push(`<tr><td>Dimension 3. Referral and Payor Dependence</td><td>${s3}</td><td>${interpretation(s3)}</td><td>What to know next: see results section</td></tr>`);
+      h.push(`<tr><td>Dimension 4. Operational Readiness</td><td>${s4}</td><td>${interpretation(s4)}</td><td>What to know next: see results section</td></tr>`);
+      h.push('</table>');
+
+      // Include full text guidance as a simple block
+      const guidance =
+        `<h4>What to Know Next</h4>
+        <p>How to score your Snapshot</p>
+        <p>Each section contains four Yes or No questions. Each section scores from 0 to 4. Don't combine sections or calculate an overall score. Each dimension stands on its own.
+<p>What this Snapshot is actually telling you<p>
+        This Snapshot isn't measuring effort or intent. It reflects how your agency likely appears when you are not in the room. The questions are designed to mirror how referral partners and payors quietly evaluate: - clarity - credibility - dependence risk - operational signal. Strong internal performance does not always translate to external preference. This Snapshot is meant to surface that gap.</p>
+        <p><strong>How to interpret your scores</strong></p>
+        <p>0–1: High risk. This area likely weakens your position on paper, even if day-to-day operations feel stable. 2–3: Mixed. This is where preference often erodes quietly over time. 4: Relative strength. Less likely to be the reason you are deprioritized. Pay particular attention to any section that scored 2 or below. That is usually where hidden leverage or exposure lives.</p>
+        <p><strong>What to do next</strong></p>
+        <p>If all sections scored 3 or 4, your agency likely presents as stable and credible to outside decision-makers. Maintain this deliberately. If one or more sections scored 2 or below, do not ignore it. These are not abstract risks. They directly affect: - referral behavior - payor confidence - long-term defensibility.</p>
+        <p>Small gaps in how you are perceived tend to compound before they become visible internally.</p>
+        <h4>If you want a second set of eyes</h4>
+        <p>If you’d like, you can send me an email at <a href="mailto:michael@michaelruhs.com?subject=Snapshot Question">Email Michael</a> with:
+        <ul><li>your four section scores</li><li>one sentence on what surprised you</li></ul>
+        I’ll send back a short set of prioritized actions based on where exposure typically shows up first. No obligation. Just guidance.</p>
+        <h4>Final Note</h4>
+        <p>This Snapshot is not trivial. This is your business, and it reflects how the partners and customers you depend on likely see you when making real decisions. Treat it with the same seriousness they do.</p>`;
+
+      resultsDiv.innerHTML = h.join('') + guidance;
+      resultsDiv.classList.remove('hidden');
+
+      // Store for CSV export
+      lastSubmission = {
+        answers,
+        scores: [s1,s2,s3,s4],
+        interpretations: [interpretation(s1), interpretation(s2), interpretation(s3), interpretation(s4)]
+      };
+
+      exportBtn.classList.remove('hidden');
+    });
+
+    // CSV export
+    exportBtn.addEventListener('click', function(){
+      if (!lastSubmission) return;
+
+      const s = lastSubmission;
+      const dimNames = [
+        'Dimension 1. Positioning Clarity',
+        'Dimension 2. Proof and Credibility',
+        'Dimension 3. Referral and Payor Dependence',
+        'Dimension 4. Operational Readiness'
+      ];
+      const keys = [
+        {name:'dim1_q1', label:'If a referral partner were asked what differentiates your agency, would they give a specific, consistent answer without prompting?'},
+        {name:'dim1_q2', label:'Can you clearly explain who you are best suited to serve and who you are not, without hedging?'},
+        {name:'dim1_q3', label:'Do your website and materials reflect the same positioning you use in conversations?'},
+        {name:'dim1_q4', label:'If a new referral source reviewed your materials alone, would they understand why to choose you over alternatives?'}
+      ];
+      // For simplicity, we’ll generate a row per dimension with the 4 questions and the user answers
+      // Build CSV header
+      let csv = 'Dimension,Question,Answer,Score,Interpretation\n';
+      // Helper to fetch answer text by key + index
+      function addRow(dimIndex, qIndex) {
+        const dimOffset = dimIndex; // 0..3
+        const keysByDim = [
+          ['dim1_q1','dim1_q2','dim1_q3','dim1_q4'],
+          ['dim2_q1','dim2_q2','dim2_q3','dim2_q4'],
+          ['dim3_q1','dim3_q2','dim3_q3','dim3_q4'],
+          ['dim4_q1','dim4_q2','dim4_q3','dim4_q4'],
+        ];
+        const questions = [
+          "If a referral partner were asked what differentiates your agency, would they give a specific, consistent answer without prompting?",
+        ];
+        // We’ll fetch actual question texts directly from DOM to ensure verbatim content
+      }
+
+      // Instead of reconstructing texts, export a straightforward, reliable CSV with:
+      // Dimension header, Question text from DOM, Answer, Score, Interpretation
+      const sections = [
+        {title:'Dimension 1. Positioning Clarity', keys:['dim1_q1','dim1_q2','dim1_q3','dim1_q4']},
+        {title:'Dimension 2. Proof and Credibility', keys:['dim2_q1','dim2_q2','dim2_q3','dim2_q4']},
+        {title:'Dimension 3. Referral and Payor Dependence', keys:['dim3_q1','dim3_q2','dim3_q3','dim3_q4']},
+        {title:'Dimension 4: Operational Readiness', keys:['dim4_q1','dim4_q2','dim4_q3','dim4_q4']},
+      ];
+
+      const lines = [];
+      lines.push('Dimension,Question,Answer,Score,Interpretation');
+      sections.forEach((sec, idx) => {
+        const score = lastSubmission.scores[idx];
+        // For each of the 4 questions in this dimension, get the label text from DOM
+        sec.keys.forEach((k, qi) => {
+          const li = document.querySelector(`input[name="${k}"]`).closest('.q');
+          // Extract the human-readable question text after the strong label (we rely on the exact text in the DOM)
+          // We'll approximate by using the visible label text in the DOM block. To keep exact wording, we'll use the innerHTML of the .q's preceding <strong> line.
+          // Simpler: fetch the next element (.q) that contains <strong>Dimension X, QY> text; but easier approach:
+          // We'll reconstruct using a data-attribute approach: since we didn't, we'll instead scan by trying to get the preceding strong element text.
+          // Fallback: use placeholder
+          let questionText = '';
+          // Attempt to locate the .q div containing the input and pick the sibling that has the <strong> line
+          const qDiv = document.querySelector(`input[name="${k}"]`).closest('.q');
+          if (qDiv && qDiv.querySelector('strong')) {
+            questionText = qDiv.querySelector('strong').nextSibling && qDiv.querySelector('strong').nextSibling.textContent.trim() || qDiv.querySelector('strong').textContent.trim();
+          }
+          // If not found, use a generic descriptor
+          if (!questionText) questionText = 'Question text not captured';
+          lines.push([sec.title, questionText, answersToText(answers[k] ?? ''), score, interpretation(score)].join(','));
+        });
+      });
+
+      // Helper to convert Yes/No or empty
+      function answersToText(v) { return v; }
+
+      // Generate content
+      const blob = new Blob([lines.join('\n')], {type:'text/csv;charset=utf-8;'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'snapshot_results.csv';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    });
+
+    // Reset
+    resetBtn.addEventListener('click', function(){
+      form.reset();
+      resultsDiv.classList.add('hidden');
+      resultsDiv.innerHTML = '';
+      exportBtn.classList.add('hidden');
+      lastSubmission = null;
+    });
+  </script>
+<script>
+(function() {
+  // Simple mapping: for each input name, store an interpretation snippet.
+  // You can customize these texts later.
+  const interpretations = {
+    'dim1_q2': 'Q1 interpretation for D1 Q2',
+    'dim1_q3': 'Q2 interpretation for D1 Q3',
+    'dim1_q4': 'Q3 interpretation for D1 Q4',
+    'dim1_q1': 'Q4 interpretation for D1 Q1',
+    'dim2_q2': 'Q1 interpretation for D2 Q2',
+    'dim2_q3': 'Q2 interpretation for D2 Q3',
+    'dim2_q4': 'Q3 interpretation for D2 Q4',
+    'dim2_q1': 'Q4 interpretation for D2 Q1',
+    'dim3_q2': 'Q1 interpretation for D3 Q2',
+    'dim3_q3': 'Q2 interpretation for D3 Q3',
+    'dim3_q4': 'Q3 interpretation for D3 Q4',
+    'dim3_q1': 'Q4 interpretation for D3 Q1',
+    'dim4_q2': 'Q1 interpretation for D4 Q2',
+    'dim4_q3': 'Q2 interpretation for D4 Q3',
+    'dim4_q4': 'Q3 interpretation for D4 Q4',
+    'dim4_q1': 'Q4 interpretation for D4 Q1'
+  };
+
+  // Collect answers: returns array of rows { question, answer, interpretation, notes }
+  function collectRows() {
+    const form = document.getElementById('snapshotForm');
+    const rows = [];
+    // Group by input names in a deterministic order
+    const names = [
+      'dim1_q2','dim1_q3','dim1_q4','dim1_q1',
+      'dim2_q2','dim2_q3','dim2_q4','dim2_q1',
+      'dim3_q2','dim3_q3','dim3_q4','dim3_q1',
+      'dim4_q2','dim4_q3','dim4_q4','dim4_q1'
+    ];
+    names.forEach(n => {
+      const radios = form.querySelectorAll('input[name="' + n + '"]');
+      const sel = Array.from(radios).find(r => r.checked);
+      const ans = sel ? sel.value : '';
+      rows.push({
+        question: n,
+        answer: ans,
+        interpretation: interpretations[n] || '',
+        notes: '' // placeholder; you can extend to read a per-question input if you add UI
+      });
+    });
+    return rows;
+  }
+
+  function rowsToCSV(rows) {
+    // Header: Question,Answer,Interpretation,Notes
+    const lines = ['Question,Answer,Interpretation,Notes'];
+    rows.forEach(r => {
+      // Quote to handle commas
+      const q = '"' + r.question + '"';
+      const a = '"' + r.answer + '"';
+      const i = '"' + r.interpretation.replace(/"/g, '""') + '"';
+      const n = '"' + r.notes.replace(/"/g, '""') + '"';
+      lines.push([q, a, i, n].join(','));
+    });
+    return lines.join('\\n');
+  }
+
+  // Export handler
+  const exportBtn = document.getElementById('exportBtn');
+  if (exportBtn) {
+    exportBtn.addEventListener('click', function() {
+      const rows = collectRows();
+      const csv = rowsToCSV(rows);
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'snapshot-export.csv';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    });
+  }
+})();
+</script>
+<footer>
+        <p>&copy; 2026 Michael Ruhs. All Rights Reserved.</p>
+    </footer></body>
+</html>
