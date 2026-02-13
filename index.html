@@ -351,7 +351,17 @@ Responses are stored locally in your browser.</p>
         <p>This Snapshot is not trivial. This is your business, and it reflects how the partners and customers you depend on likely see you when making real decisions. Treat it with the same seriousness they do.</p>`;
 
       resultsDiv.innerHTML = h.join('') + guidance;
-      resultsDiv.classList.remove('hidden');
+resultsDiv.classList.remove('hidden');
+
+// GA4 completion tracking
+if (typeof window.gtag === 'function') {
+  gtag('event', 'snapshot_completed', {
+    visibility_score: Number(s1),
+    access_score: Number(s2),
+    operations_score: Number(s3),
+    competition_score: Number(s4)
+  });
+}
 
       // Store for CSV export
       lastSubmission = {
