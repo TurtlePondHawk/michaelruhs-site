@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S8KL8WXBB3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-S8KL8WXBB3');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Referral & Payor Risk Snapshot - Form</title>
+
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; line-height: 1.5; color:#333; }
+    h1 { font-size: 1.25rem; margin-bottom: .5rem; }
+    .dim { border:1px solid #ddd; padding:1rem; border-radius:.5rem; margin-bottom:1rem; }
+    .dim h2 { font-size:1rem; margin:0 0 .5rem 0; }
+    .q { margin: .5rem 0; }
+    .q label { display: inline-flex; align-items: center; gap:.4rem; margin-right: .75rem; }
+    .buttons { margin-top: 1rem; display:flex; gap:.5rem; flex-wrap: wrap; }
+    .results { margin-top: 1rem; padding: .75rem; border:1px solid #bbb; border-radius:.5rem; background:#f9f9f9; }
+    table { border-collapse: collapse; width: 100%; margin-top:.5rem; }
+    th, td { border:1px solid #ddd; padding:.5rem; text-align:left; font-size:.92rem; }
+    th { background:#f0f0f0; }
+    .hidden { display:none; }
+    .export { margin-left:auto; }
+    .warning { color:#b00; font-weight:bold; }
+    .score { font-size: 1.1em; font-weight: bold; }
+    .subtle { color:#555; font-size:.95rem; }
+    input[type="number"] { padding:.35rem; width: 8rem; }
+  </style>
+</head>
+
+<body>
+  <h1>Referral & Payor Risk Snapshot (V2)</h1>
+
+  <p>
+    Independent skilled home health agencies are operating in a structurally different environment than five years ago.
+    Medicare Advantage penetration, centralized discharge planning, and data-driven panel decisions have increased concentration exposure
+    for agencies dependent on a limited number of referral and payor channels.
+  </p>
+  <p>
+    This Snapshot is designed to be completed privately by the skilled home care agency owner or administrator.
+    There are no right answers. It works best when you answer conservatively.
+    If you’re unsure whether something would hold up consistently with referral sources or payors, mark “No.”
+    All questions are required. Responses are stored locally in your browser.
+  </p>
+
+  <form id="snapshotForm" autocomplete="off" aria-label="Snapshot form">
+    <!-- Dimension 1: Positioning Clarity -->
+    <section class="dim" id="dim1">
+      <h2>Dimension 1. Positioning Clarity</h2>
+      <p class="subtle">
+        This dimension evaluates whether your agency holds a clear, defensible position in the minds of referral partners and payors.
+        Strong agencies are distinct. Weak positioning leads to quiet preference erosion even when performance is solid.
+      </p>
+
+      <div class="q">
+        <strong>Dimension 1, Q1:</strong>
+        <span>If a referral partner were asked what differentiates your agency, would they give a specific, consistent answer without prompting?</span>
+      </div>
+      <div class="q">
+        <label><input type="radio" name="dim1_q1" value="Yes" required/> Yes</label>
+        <label><input type="radio" name="dim1_q1" value="No" required/> No</label>
+      </div>
+
+      <div class="q">
+        <strong>Dimension 1, Q2:</strong>
+        <span>Can you and your partner-facing team members clearly explain who you are best suited to serve and who you are not, without hedging?</span>
+      </div>
+      <div class="q">
+        <label><input type="radio" name="dim1_q2" value="Yes" required/> Yes</label>
+        <label><input type="radio" name="dim1_q2" value="No" required/> No</label>
+      </div>
+
+      <div class="q">
+        <strong>Dimension 1, Q3:</strong>
+        <span>Do your website and materials reflect the same positioning you use in conversations?</span>
+      </div>
+      <div class="q">
+        <label><input type="radio" name="dim1_q3" value="Yes" required/> Yes</label>
+        <label><input type="radio" name="dim1_q3" value="No" required/> No</label>
+      </div>
+
+      <div class="q">
+        <strong>Dimension 1, Q4:</strong>
+        <span>If a new referral source reviewed your materials alone, would they understand why to choose you over alternatives?</span>
+      </div>
+      <div class="q">
+        <label><input type="radio" name="dim1_q4" value="Yes" required/> Yes</label>
+        <label><input type="radio" name="dim1_q4" value="No" required/> No</label>
+      </div>
+    </section>
+
+    <!-- Dimension 2: Proof and Credibility -->
+    <section class="dim" id="dim2">
+      <h2>Dimension 2. Proof and Credibility</h2>
+      <p class="subtle">
+        This dimension assesses whether your strengths are verifiable and portable, not just believed internally.
+        Credibility is tested when volume tightens, scrutiny increases, or someone else reviews you without your involvement.
+      </p>
+
+      <div class="q">
+        <strong>Dimension 2, Q1:</strong>
+        <span>Do you have specific proof points you and your partner-facing team members routinely reference when credibility is tested (examples, outcomes, cases, or patterns)?</span>
+      </div>
+      <div class="q">
+        <label><input type="radio" name="dim2_q1" value="Yes" required/> Yes</label>
+        <label><input type="radio" name="dim2_q1" value="No" required/> No</label>
+      </div>
+
+      <div class="q">
+        <strong>Dimension 2, Q2:</strong>
+        <span>Would an outside reviewer see evidence of reliability and follow-through, not just good intent?</span>
+      </div>
+      <div class="q">
+        <label><input type="radio" name="dim2_q2" value="Yes" required/> Yes</label>
+        <label><input type="radio" name="dim2_q2" value="No" required/> No</label>
+      </div>
+
+      <div class="q">
+        <strong>Dimension 2, Q3:</strong>
+        <span>Are your strengths documented in a way that travels without you being present?</span>
+      </div>
+      <div class="q">
+        <label><input type="radio" name="dim2_q3" value="Yes" required/> Yes</label>
+        <label><input type="radio" name="dim2_q3" value="No" required/> No</label>
+      </div>
+
+      <div class="q">
+        <strong>Dimension 2, Q4:</strong>
+        <span>If challenged on quality or consistency, could you and your partner-facing team members respond with facts, not assurances?</span>
+      </div>
+      <div class="q">
+        <label><input type="radio" name="dim2_q4" value="Yes" required/> Yes</label>
+        <label><input type="radio" name="dim2_q4" value="No" required/> No</label>
+      </div>
+    </section>
+
+    <!-- Dimension 3: Referral Concentration Risk -->
+    <section class="dim" id="dim3">
+      <h2>Dimension 3. Referral Concentration Risk</h2>
+      <p class="subtle">
+        This dimension evaluates exposure to referral concentration and invisible preference shifts. High dependence often feels stable until it isn’t.
+        The risk is not losing a source suddenly. The risk is not seeing preference decay until it impacts operations.
+      </p>
+      <p class="subtle">
+        <strong>Threshold anchors:</strong><br/>
+        If your top 2 referral sources exceed 40% of total revenue, you are strategically exposed.<br/>
+        If your top 3 exceed 55%, you are structurally dependent.
+      </p>
+
+      <div class="q">
+        <strong>Dimension 3, Q1:</strong>
+        <span>Could you afford to lose your largest referral source without immediate operational distress?</span>
+      </div>
+      <div class="q">
+        <label><input type="radio" name="dim3_q1" value="Yes" required/> Yes</label>
+        <label><input type="radio" name="dim3_q1" value="No" required/> No</label>
+      </div>
+
+      <div class="q">
+        <strong>Dimension 3, Q2:</strong>
+        <span>Do you understand why your top referral sources choose you, beyond convenience or history?</span>
+      </div>
+      <div class="q">
+        <label><input type="radio" name="dim3_q2" value="Yes" required/> Yes</label>
+        <label><input type="radio" name="dim3_q2" value="No" required/> No</label>
+      </div>
+
+      <div class="q">
+        <strong>Dimension 3, Q3:</strong>
+        <span>Are you actively strengthening referral source relationships before volume changes, not after?</span>
+      </div>
+      <div class="q">
+        <label><input type="radio" name="dim3_q3" value="Yes" required/> Yes</label>
+        <label><input type="radio" name="dim3_q3" value="No" required/> No</label>
+      </div>
+
+      <div class="q">
+        <strong>Dimension 3, Q4:</strong>
+        <span>If referral behavior shifted quietly, would you see it early or only after impact?</span>
+      </div>
+      <div class="q">
+        <label><input type="radio" name="dim3_q4" value="Yes" required/> Yes</label>
+        <label><input type="radio" name="dim3_q4" value="No" required/> No</label>
+      </div>
+
+      <div class="q">
+        <strong>Dimension 3, Q5 (Quantitative):</strong>
+        <span>What percent of total revenue comes from your top 3 referral sources?</span>
+      </div>
+      <div class="q">
+        <label>
+          <input type="number" name="ref_top3_pct" min="0" max="100" step="0.1" required/>
+          %
+        </label>
+      </div>
+    </section>
+
+    <!-- Dimension 4: Payor Concentration Risk -->
+    <section class="dim" id="dim4">
+      <h2>Dimension 4. Payor Concentration Risk</h2>
+      <p class="subtle">
+        This dimension evaluates exposure to payor leverage and reimbursement volatility.
+      </p>
+      <p class="subtle">
+        <strong>Threshold anchors:</strong><br/>
+        If one Medicare Advantage plan exceeds 35–40% of revenue, leverage risk increases materially.<br/>
+        If 50%+ revenue is MA-driven without differentiated contracts, margin compression risk is elevated.
+      </p>
+
+      <div class="q">
+        <strong>Dimension 4, Q1 (Quantitative):</strong>
+        <span>What percent of revenue is tied to your largest Medicare Advantage plan?</span>
+      </div>
+      <div class="q">
+        <label>
+          <input type="number" name="ma_largest_pct" min="0" max="100" step="0.1" required/>
+          %
+        </label>
+      </div>
+
+      <div class="q">
+        <strong>Dimension 4, Q2:</strong>
+        <span>Do you have differentiated contract terms or leverage with your largest MA plan?</span>
+      </div>
+      <div class="q">
+        <label><input type="radio" name="dim4_q1" value="Yes" required/> Yes</label>
+        <label><input type="radio" name="dim4_q1" value="No" required/> No</label>
+      </div>
+
+      <div class="q">
+        <strong>Dimension 4, Q3:</strong>
+        <span>Would a rate adjustment materially impact EBITDA?</span>
+      </div>
+      <div class="q">
+        <label><input type="radio" name="dim4_q2" value="Yes" required/> Yes</label>
+        <label><input type="radio" name="dim4_q2" value="No" required/> No</label>
+      </div>
+
+      <div class="q">
+        <strong>Dimension 4, Q4:</strong>
+        <span>Are you actively managing payor mix rather than accepting drift?</span>
+      </div>
+      <div class="q">
+        <label><input type="radio" name="dim4_q3" value="Yes" required/> Yes</label>
+        <label><input type="radio" name="dim4_q3" value="No" required/> No</label>
+      </div>
+
+      <div class="q">
+        <strong>Dimension 4, Q5:</strong>
+        <span>Do you have a repeatable process for monitoring MA friction (authorizations, denials, delays) before it hits cash flow?</span>
+      </div>
+      <div class="q">
+        <label><input type="radio" name="dim4_q4" value="Yes" required/> Yes</label>
+        <label><input type="radio" name="dim4_q4" value="No" required/> No</label>
+      </div>
+    </section>
+
+    <!-- Dimension 5: Operational Signaling (formerly Operational Readiness) -->
+    <section class="dim" id="dim5">
+      <h2>Dimension 5: Operational Signaling</h2>
+      <p class="subtle">
+        This dimension looks at whether your operations send a positive signal externally, not just internally.
+        Referral partners and payors notice friction, inconsistency, and how breakdowns are handled.
+      </p>
+
+      <div class="q">
+        <strong>Dimension 5, Q1:</strong>
+        <span>Would referral partners describe your agency as easy to work with, even under pressure?</span>
+      </div>
+      <div class="q">
+        <label><input type="radio" name="dim5_q1" value="Yes" required/> Yes</label>
+        <label><input type="radio" name="dim5_q1" value="No" required/> No</label>
+      </div>
+
+      <div class="q">
+        <strong>Dimension 5, Q2:</strong>
+        <span>Are your internal processes stable enough that growth would not degrade performance?</span>
+      </div>
+      <div class="q">
+        <label><input type="radio" name="dim5_q2" value="Yes" required/> Yes</label>
+        <label><input type="radio" name="dim5_q2" value="No" required/> No</label>
+      </div>
+
+      <div class="q">
+        <strong>Dimension 5, Q3:</strong>
+        <span>If asked how your agency handles breakdowns, could you and your partner-facing team members explain a clear, repeatable approach?</span>
+      </div>
+      <div class="q">
+        <label><input type="radio" name="dim5_q3" value="Yes" required/> Yes</label>
+        <label><input type="radio" name="dim5_q3" value="No" required/> No</label>
+      </div>
+
+      <div class="q">
+        <strong>Dimension 5, Q4:</strong>
+        <span>Would an external reviewer conclude your agency is prepared for increased scrutiny, not just current volume?</span>
+      </div>
+      <div class="q">
+        <label><input type="radio" name="dim5_q4" value="Yes" required/> Yes</label>
+        <label><input type="radio" name="dim5_q4" value="No" required/> No</label>
+      </div>
+    </section>
+
+    <div class="buttons">
+      <button type="submit" id="submitBtn">Submit and Show Results</button>
+      <!-- <button type="button" id="exportBtn" class="hidden export">Export CSV</button> -->
+      <button type="button" id="resetBtn" class="export">Reset</button>
+    </div>
+  </form>
+
+  <div id="results" class="results hidden" aria-live="polite"></div>
+
+<script>
+  // Helper: collect all answers into a flat array of {dim, q, answer}
+  function collectAnswers() {
+    const result = [];
+    const form = document.getElementById('snapshotForm');
+    const names = Array.from(form.querySelectorAll('input[type="radio"], input[type="number"]')).map(el => el.name);
+    const uniqueNames = Array.from(new Set(names));
+    uniqueNames.forEach(name => {
+      const el = form.querySelector('[name="' + name + '"]');
+      if (!el) return;
+
+      let answer = '';
+      if (el.type === 'number') {
+        answer = el.value;
+      } else {
+        const radios = form.querySelectorAll('input[name="' + name + '"]');
+        const selected = Array.from(radios).find(r => r.checked);
+        answer = selected ? selected.value : '';
+      }
+      result.push({ name, answer });
+    });
+    return result;
+  }
+
+  function toCSV(rows) {
+    const header = ['Question', 'Answer'];
+    const lines = [header.join(',')];
+    rows.forEach(r => {
+      const q = r.name;
+      const a = r.answer;
+      lines.push(`"${q}","${a}"`);
+    });
+    return lines.join('\n');
+  }
+
+  // Export handler (kept intact; button is currently commented out in HTML)
+  document.getElementById('exportBtn')?.addEventListener('click', function() {
+    const answers = collectAnswers();
+    const csv = toCSV(answers);
+
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'snapshot-export.csv';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  });
+</script>
+
+<script>
+  // Helpers
+  function getDimensionScore(answers, keys) {
+    let count = 0;
+    for (const k of keys) {
+      if (answers[k] === 'Yes') count++;
+    }
+    return count;
+  }
+
+  function interpretation(score) {
+    if (score <= 1) return 'Structural Exposure Identified';
+    if (score <= 3) return 'Preference Instability';
+    return 'Defensible Position (For Now)';
+  }
+
+  // Form handling
+  const form = document.getElementById('snapshotForm');
+  const resultsDiv = document.getElementById('results');
+  const exportBtn = document.getElementById('exportBtn');
+  const resetBtn = document.getElementById('resetBtn');
+
+  let lastSubmission = null;
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    const data = new FormData(form);
+    const answers = {};
+    for (const [k, v] of data.entries()) {
+      answers[k] = v;
+    }
+
+    // Dimension definitions (ordered question keys)
+    const dim1_keys = ['dim1_q1','dim1_q2','dim1_q3','dim1_q4'];
+    const dim2_keys = ['dim2_q1','dim2_q2','dim2_q3','dim2_q4'];
+    const dim3_keys = ['dim3_q1','dim3_q2','dim3_q3','dim3_q4'];
+    const dim4_keys = ['dim4_q1','dim4_q2','dim4_q3','dim4_q4'];
+    const dim5_keys = ['dim5_q1','dim5_q2','dim5_q3','dim5_q4'];
+
+    const s1 = getDimensionScore(answers, dim1_keys);
+    const s2 = getDimensionScore(answers, dim2_keys);
+    const s3 = getDimensionScore(answers, dim3_keys);
+    const s4 = getDimensionScore(answers, dim4_keys);
+    const s5 = getDimensionScore(answers, dim5_keys);
+
+    const refTop3Pct = Number(answers['ref_top3_pct']);
+    const maLargestPct = Number(answers['ma_largest_pct']);
+
+    // Flags
+    const refFlagHigh = !Number.isNaN(refTop3Pct) && refTop3Pct >= 55;
+    const refFlagMed = !Number.isNaN(refTop3Pct) && refTop3Pct >= 40 && refTop3Pct < 55;
+
+    const maFlagHigh = !Number.isNaN(maLargestPct) && maLargestPct >= 40;
+    const maFlagMed = !Number.isNaN(maLargestPct) && maLargestPct >= 35 && maLargestPct < 40;
+
+    // Build results HTML
+    const h = [];
+    h.push('<h3>Snapshot Results</h3>');
+    h.push('<table>');
+    h.push('<tr><th>Dimension</th><th>Score (0–4)</th><th>Interpretation</th><th>Notes</th></tr>');
+
+    h.push(`<tr><td>Dimension 1. Positioning Clarity</td><td>${s1}</td><td>${interpretation(s1)}</td><td>See "What to know next" below</td></tr>`);
+    h.push(`<tr><td>Dimension 2. Proof and Credibility</td><td>${s2}</td><td>${interpretation(s2)}</td><td>See "What to know next" below</td></tr>`);
+    h.push(`<tr><td>Dimension 3. Referral Concentration Risk</td><td>${s3}</td><td>${interpretation(s3)}</td><td>Top 3 referral %: <strong>${refTop3Pct}%</strong></td></tr>`);
+    h.push(`<tr><td>Dimension 4. Payor Concentration Risk</td><td>${s4}</td><td>${interpretation(s4)}</td><td>Largest MA %: <strong>${maLargestPct}%</strong></td></tr>`);
+    h.push(`<tr><td>Dimension 5. Operational Signaling</td><td>${s5}</td><td>${interpretation(s5)}</td><td>See "What to know next" below</td></tr>`);
+    h.push('</table>');
+
+    // Threshold notes
+    const thresholdNotes = [];
+    if (refFlagHigh) thresholdNotes.push('<p class="warning">Referral concentration threshold: Top 3 referrals ≥ 55% indicates structural dependency.</p>');
+    else if (refFlagMed) thresholdNotes.push('<p class="warning">Referral concentration threshold: Above 40% suggests strategic exposure.</p>');
+
+    if (maFlagHigh) thresholdNotes.push('<p class="warning">Payor concentration threshold: Largest MA plan ≥ 40% suggests materially increased leverage risk.</p>');
+    else if (maFlagMed) thresholdNotes.push('<p class="warning">Payor concentration threshold: Largest MA plan ≥ 35% suggests elevated leverage risk.</p>');
+
+    // Guidance block (V2)
+    const guidance =
+      `<h4>What to Know Next</h4>
+      <p><strong>How scoring works</strong></p>
+      <p>Each scored section contains four Yes or No questions. Each section scores from 0 to 4. Do not combine sections or calculate an overall score. Each dimension stands on its own.</p>
+
+      <p><strong>What this Snapshot is actually telling you</strong></p>
+      <p>
+        This Snapshot isn't measuring effort or intent. It reflects how your agency likely appears when you are not in the room.
+        It is designed to mirror how referral partners and payors evaluate defensibility: clarity, credibility, concentration exposure, and operational signal.
+        Strong internal performance does not always translate to external preference.
+      </p>
+
+      <p><strong>How to interpret your scores</strong></p>
+      <p>0–1: <strong>Structural Exposure Identified</strong>. Vulnerability is likely present, even if day-to-day operations feel stable.</p>
+      <p>2–3: <strong>Preference Instability</strong>. This is where preference often erodes quietly over time.</p>
+      <p>4: <strong>Defensible Position (For Now)</strong>. Less likely to be the reason you are deprioritized, but still requires reinforcement.</p>
+
+      <p><strong>Concentration thresholds</strong></p>
+      <p>
+        Referral: If your top 2 referral sources exceed 40% of total revenue, you are strategically exposed. If your top 3 exceed 55%, you are structurally dependent.<br/>
+        Payor: If one MA plan exceeds 35–40% of revenue, leverage risk increases materially. If 50%+ revenue is MA-driven without differentiated contracts, margin compression risk is elevated.
+      </p>
+
+      ${thresholdNotes.join('')}
+
+      <p><strong>Time-lag warning</strong></p>
+      <p>Most agencies do not see referral erosion in operational metrics until 6–9 months after external preference has already shifted.</p>
+
+      <p><strong>Revenue sensitivity illustration</strong></p>
+      <p>
+        If top 2 referrals represent 45% of revenue: a 20% reduction from one source ≈ 9% total revenue impact; a 30% reduction ≈ 13.5%.<br/>
+        If largest MA plan represents 40% of revenue: a 3% rate compression can materially reduce EBITDA; increased authorization friction can create cash flow volatility.
+      </p>
+
+      <h4>If you want a second set of eyes</h4>
+      <p>
+        If you’d like, you can email <a href="mailto:michael@michaelruhs.com?subject=Referral%20%26%20Payor%20Exposure%20Review">Michael</a> with:
+      </p>
+      <ul>
+        <li>your five section scores</li>
+        <li>Top 3 referral % and Largest MA %</li>
+        <li>one sentence on what surprised you</li>
+      </ul>
+      <p>
+        You’ll get back a short set of prioritized actions based on where exposure typically shows up first.
+        No obligation. Just guidance.
+      </p>
+
+      <h4>Final Note</h4>
+      <p>This Snapshot is not trivial. It reflects how the partners and customers you depend on likely see you when making real decisions. Treat it with the same seriousness they do.</p>`;
+
+    resultsDiv.innerHTML = h.join('') + guidance;
+    resultsDiv.classList.remove('hidden');
+
+    // GA4 completion tracking
+    if (typeof window.gtag === 'function') {
+      gtag('event', 'snapshot_completed', {
+        positioning_score: Number(s1),
+        credibility_score: Number(s2),
+        referral_risk_score: Number(s3),
+        payor_risk_score: Number(s4),
+        operations_score: Number(s5),
+        ref_top3_pct: Number(refTop3Pct),
+        ma_largest_pct: Number(maLargestPct)
+      });
+    }
+
+    lastSubmission = {
+      answers,
+      scores: [s1,s2,s3,s4,s5],
+      interpretations: [interpretation(s1), interpretation(s2), interpretation(s3), interpretation(s4), interpretation(s5)]
+    };
+
+    exportBtn && exportBtn.classList.remove('hidden');
+  });
+
+  // Reset
+  resetBtn.addEventListener('click', function(){
+    form.reset();
+    resultsDiv.classList.add('hidden');
+    resultsDiv.innerHTML = '';
+    exportBtn && exportBtn.classList.add('hidden');
+    lastSubmission = null;
+  });
+</script>
+
+<!-- Keeping your existing second CSV exporter block intact (it references exportBtn).
+     It will now export both radios and numeric fields if you later re-enable the Export CSV button in HTML. -->
+<script>
+(function() {
+  const interpretations = {
+    'dim1_q1': 'Positioning clarity indicator',
+    'dim1_q2': 'Positioning clarity indicator',
+    'dim1_q3': 'Positioning clarity indicator',
+    'dim1_q4': 'Positioning clarity indicator',
+    'dim2_q1': 'Credibility indicator',
+    'dim2_q2': 'Credibility indicator',
+    'dim2_q3': 'Credibility indicator',
+    'dim2_q4': 'Credibility indicator',
+    'dim3_q1': 'Referral concentration indicator',
+    'dim3_q2': 'Referral concentration indicator',
+    'dim3_q3': 'Referral concentration indicator',
+    'dim3_q4': 'Referral concentration indicator',
+    'dim4_q1': 'Payor leverage indicator',
+    'dim4_q2': 'Payor leverage indicator',
+    'dim4_q3': 'Payor leverage indicator',
+    'dim4_q4': 'Payor leverage indicator',
+    'dim5_q1': 'Operational signaling indicator',
+    'dim5_q2': 'Operational signaling indicator',
+    'dim5_q3': 'Operational signaling indicator',
+    'dim5_q4': 'Operational signaling indicator',
+    'ref_top3_pct': 'Top 3 referral revenue percentage',
+    'ma_largest_pct': 'Largest MA plan revenue percentage'
+  };
+
+  function collectRows() {
+    const form = document.getElementById('snapshotForm');
+    const rows = [];
+    const names = [
+      'dim1_q1','dim1_q2','dim1_q3','dim1_q4',
+      'dim2_q1','dim2_q2','dim2_q3','dim2_q4',
+      'dim3_q1','dim3_q2','dim3_q3','dim3_q4',
+      'ref_top3_pct',
+      'ma_largest_pct',
+      'dim4_q1','dim4_q2','dim4_q3','dim4_q4',
+      'dim5_q1','dim5_q2','dim5_q3','dim5_q4'
+    ];
+
+    names.forEach(n => {
+      const el = form.querySelector('[name="' + n + '"]');
+      if (!el) return;
+
+      let ans = '';
+      if (el.type === 'number') {
+        ans = el.value;
+      } else {
+        const radios = form.querySelectorAll('input[name="' + n + '"]');
+        const sel = Array.from(radios).find(r => r.checked);
+        ans = sel ? sel.value : '';
+      }
+
+      rows.push({
+        question: n,
+        answer: ans,
+        interpretation: interpretations[n] || '',
+        notes: ''
+      });
+    });
+
+    return rows;
+  }
+
+  function rowsToCSV(rows) {
+    const lines = ['Question,Answer,Interpretation,Notes'];
+    rows.forEach(r => {
+      const q = '"' + String(r.question).replace(/"/g,'""') + '"';
+      const a = '"' + String(r.answer).replace(/"/g,'""') + '"';
+      const i = '"' + String(r.interpretation).replace(/"/g,'""') + '"';
+      const n = '"' + String(r.notes).replace(/"/g,'""') + '"';
+      lines.push([q, a, i, n].join(','));
+    });
+    return lines.join('\n');
+  }
+
+  const exportBtn = document.getElementById('exportBtn');
+  if (exportBtn) {
+    exportBtn.addEventListener('click', function() {
+      const rows = collectRows();
+      const csv = rowsToCSV(rows);
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'snapshot-export.csv';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    });
+  }
+})();
+</script>
+
+<footer>
+  <p>&copy; 2026 Michael Ruhs. All Rights Reserved.</p>
+</footer>
+</body>
+</html>
