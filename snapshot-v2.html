@@ -32,6 +32,7 @@
     .score { font-size: 1.1em; font-weight: bold; }
     .subtle { color:#555; font-size:.95rem; }
     input[type="number"] { padding:.35rem; width: 8rem; }
+    .callout { margin-top: .75rem; padding: .75rem; border: 1px solid #ddd; border-radius:.5rem; background: #fff; }
   </style>
 </head>
 
@@ -192,6 +193,17 @@
 
       <div class="q">
         <strong>Dimension 3, Q5 (Quantitative):</strong>
+        <span>What percent of total revenue comes from your top 2 referral sources?</span>
+      </div>
+      <div class="q">
+        <label>
+          <input type="number" name="ref_top2_pct" min="0" max="100" step="0.1" required/>
+          %
+        </label>
+      </div>
+
+      <div class="q">
+        <strong>Dimension 3, Q6 (Quantitative):</strong>
         <span>What percent of total revenue comes from your top 3 referral sources?</span>
       </div>
       <div class="q">
@@ -262,7 +274,7 @@
       </div>
     </section>
 
-    <!-- Dimension 5: Operational Signaling (formerly Operational Readiness) -->
+    <!-- Dimension 5: Operational Signaling -->
     <section class="dim" id="dim5">
       <h2>Dimension 5: Operational Signaling</h2>
       <p class="subtle">
@@ -414,44 +426,47 @@
     const s4 = getDimensionScore(answers, dim4_keys);
     const s5 = getDimensionScore(answers, dim5_keys);
 
+    const refTop2Pct = Number(answers['ref_top2_pct']);
     const refTop3Pct = Number(answers['ref_top3_pct']);
     const maLargestPct = Number(answers['ma_largest_pct']);
 
     // Flags
-    const refFlagHigh = !Number.isNaN(refTop3Pct) && refTop3Pct >= 55;
-    const refFlagMed = !Number.isNaN(refTop3Pct) && refTop3Pct >= 40 && refTop3Pct < 55;
+    const ref2FlagHigh = !Number.isNaN(refTop2Pct) && refTop2Pct >= 40;
+    const ref3FlagHigh = !Number.isNaN(refTop3Pct) && refTop3Pct >= 55;
 
     const maFlagHigh = !Number.isNaN(maLargestPct) && maLargestPct >= 40;
     const maFlagMed = !Number.isNaN(maLargestPct) && maLargestPct >= 35 && maLargestPct < 40;
 
-    // Dynamic consequence messaging (requested)
+    // Dynamic consequence messaging (explicit, inserted before guidance)
     let referralDynamic = '';
     let payorDynamic = '';
 
-    if (!Number.isNaN(refTop3Pct)) {
-      if (refTop3Pct >= 55) {
+    // Referral dynamic consequence (uses BOTH top 2 and top 3)
+    if (!Number.isNaN(refTop2Pct) && !Number.isNaN(refTop3Pct)) {
+      if (ref3FlagHigh) {
         referralDynamic = `
           <p class="warning">
-            Your top 3 referral sources represent <strong>${refTop3Pct}%</strong> of revenue.
+            Your top 2 referral sources represent <strong>${refTop2Pct}%</strong> of revenue and your top 3 represent <strong>${refTop3Pct}%</strong>.
             This means your revenue depends heavily on a small cluster of people or institutions.
             A policy change, personnel shift, or panel adjustment from one source could materially affect overall performance.
           </p>`;
-      } else if (refTop3Pct >= 40) {
+      } else if (ref2FlagHigh) {
         referralDynamic = `
           <p class="warning">
-            Your top 3 referral sources represent <strong>${refTop3Pct}%</strong> of revenue.
+            Your top 2 referral sources represent <strong>${refTop2Pct}%</strong> of revenue (top 3: <strong>${refTop3Pct}%</strong>).
             A change in behavior from one major source could noticeably reduce annual revenue.
             Quiet erosion may occur before internal metrics reflect it.
           </p>`;
       } else {
         referralDynamic = `
           <p>
-            Your top 3 referral sources represent <strong>${refTop3Pct}%</strong> of revenue.
+            Your top 2 referral sources represent <strong>${refTop2Pct}%</strong> of revenue (top 3: <strong>${refTop3Pct}%</strong>).
             This appears relatively diversified. Keep monitoring early behavior shifts so you see change before it hits operations.
           </p>`;
       }
     }
 
+    // Payor dynamic consequence
     if (!Number.isNaN(maLargestPct)) {
       if (maLargestPct >= 40) {
         payorDynamic = `
@@ -482,20 +497,20 @@
 
     h.push(`<tr><td>Dimension 1. Positioning Clarity</td><td>${s1}</td><td>${interpretation(s1)}</td><td>See "What to know next" below</td></tr>`);
     h.push(`<tr><td>Dimension 2. Proof and Credibility</td><td>${s2}</td><td>${interpretation(s2)}</td><td>See "What to know next" below</td></tr>`);
-    h.push(`<tr><td>Dimension 3. Referral Concentration Risk</td><td>${s3}</td><td>${interpretation(s3)}</td><td>Top 3 referral %: <strong>${refTop3Pct}%</strong></td></tr>`);
+    h.push(`<tr><td>Dimension 3. Referral Concentration Risk</td><td>${s3}</td><td>${interpretation(s3)}</td><td>Top 2: <strong>${refTop2Pct}%</strong> | Top 3: <strong>${refTop3Pct}%</strong></td></tr>`);
     h.push(`<tr><td>Dimension 4. Payor Concentration Risk</td><td>${s4}</td><td>${interpretation(s4)}</td><td>Largest MA %: <strong>${maLargestPct}%</strong></td></tr>`);
     h.push(`<tr><td>Dimension 5. Operational Signaling</td><td>${s5}</td><td>${interpretation(s5)}</td><td>See "What to know next" below</td></tr>`);
     h.push('</table>');
 
-    // Threshold notes
+    // Threshold notes (plain language)
     const thresholdNotes = [];
-    if (refFlagHigh) thresholdNotes.push('<p class="warning">Referral concentration threshold: Top 3 referrals ≥ 55% means your revenue depends heavily on a small cluster of people or institutions.</p>');
-    else if (refFlagMed) thresholdNotes.push('<p class="warning">Referral concentration threshold: Above 40% means a change in behavior from one major source could noticeably reduce annual revenue.</p>');
+    if (ref3FlagHigh) thresholdNotes.push('<p class="warning">Referral threshold: Top 3 ≥ 55% means revenue depends heavily on a small cluster of sources.</p>');
+    else if (ref2FlagHigh) thresholdNotes.push('<p class="warning">Referral threshold: Top 2 ≥ 40% means a change in behavior from one decision-maker could noticeably reduce annual revenue.</p>');
 
-    if (maFlagHigh) thresholdNotes.push('<p class="warning">Payor concentration threshold: Largest MA plan ≥ 40% means rate adjustments or authorization friction can materially compress margin and affect cash flow stability.</p>');
-    else if (maFlagMed) thresholdNotes.push('<p class="warning">Payor concentration threshold: Largest MA plan ≥ 35% means leverage risk is elevated and small reimbursement shifts can compound over time.</p>');
+    if (maFlagHigh) thresholdNotes.push('<p class="warning">Payor threshold: Largest MA ≥ 40% means rate adjustments or authorization friction can materially compress margin and affect cash flow stability.</p>');
+    else if (maFlagMed) thresholdNotes.push('<p class="warning">Payor threshold: Largest MA ≥ 35% means leverage risk is elevated and small reimbursement shifts can compound over time.</p>');
 
-    // Guidance block (V2)
+    // Guidance block (V2) + Exposure Modeling Session positioning
     const guidance =
       `<h4>What to Know Next</h4>
       <p><strong>How scoring works</strong></p>
@@ -532,24 +547,28 @@
         If largest MA plan represents 40% of revenue: a 3% rate compression can materially reduce EBITDA; increased authorization friction can create cash flow volatility.
       </p>
 
-      <h4>If you want a second set of eyes</h4>
-      <p>
-        If you’d like, you can <a href="mailto:michael@michaelruhs.com?subject=Referral%20%26%20Payor%20Exposure%20Review">send me an email</a> with:
-      </p>
-      <ul>
-        <li>your five section scores</li>
-        <li>Top 3 referral % and Largest MA %</li>
-        <li>one sentence on what surprised you</li>
-      </ul>
-      <p>
-        You’ll get back a short set of prioritized actions based on where exposure typically shows up first.
-        No obligation. Just guidance.
-      </p>
+      <div class="callout">
+        <h4>Exposure Modeling Session (20 minutes)</h4>
+        <p>
+          If you want, send me your five section scores plus your Top 2, Top 3, and Largest MA percentages.
+          I’ll reply with a short exposure model: where you’re vulnerable, what would move the needle fastest, and what to watch first.
+        </p>
+        <p>
+          <a href="mailto:michael@michaelruhs.com?subject=Exposure%20Modeling%20Session%20Request">Request an Exposure Modeling Session by email</a>
+        </p>
+        <ul>
+          <li>five section scores</li>
+          <li>Top 2 referral % and Top 3 referral %</li>
+          <li>Largest MA %</li>
+          <li>one sentence on what surprised you</li>
+        </ul>
+        <p>No obligation. Just clarity.</p>
+      </div>
 
       <h4>Final Note</h4>
       <p>This Snapshot is not trivial. It reflects how the partners and customers you depend on likely see you when making real decisions. Treat it with the same seriousness they do.</p>`;
 
-    // Insert dynamic consequence blocks before the guidance (requested)
+    // Dynamic consequence inserted BEFORE guidance (explicitly)
     resultsDiv.innerHTML = h.join('') + referralDynamic + payorDynamic + guidance;
     resultsDiv.classList.remove('hidden');
 
@@ -561,6 +580,7 @@
         referral_risk_score: Number(s3),
         payor_risk_score: Number(s4),
         operations_score: Number(s5),
+        ref_top2_pct: Number(refTop2Pct),
         ref_top3_pct: Number(refTop3Pct),
         ma_largest_pct: Number(maLargestPct)
       });
@@ -585,8 +605,7 @@
   });
 </script>
 
-<!-- Keeping your existing second CSV exporter block intact (it references exportBtn).
-     It will now export both radios and numeric fields if you later re-enable the Export CSV button in HTML. -->
+<!-- Keeping your existing second CSV exporter block intact -->
 <script>
 (function() {
   const interpretations = {
@@ -602,6 +621,9 @@
     'dim3_q2': 'Referral concentration indicator',
     'dim3_q3': 'Referral concentration indicator',
     'dim3_q4': 'Referral concentration indicator',
+    'ref_top2_pct': 'Top 2 referral revenue percentage',
+    'ref_top3_pct': 'Top 3 referral revenue percentage',
+    'ma_largest_pct': 'Largest MA plan revenue percentage',
     'dim4_q1': 'Payor leverage indicator',
     'dim4_q2': 'Payor leverage indicator',
     'dim4_q3': 'Payor leverage indicator',
@@ -609,9 +631,7 @@
     'dim5_q1': 'Operational signaling indicator',
     'dim5_q2': 'Operational signaling indicator',
     'dim5_q3': 'Operational signaling indicator',
-    'dim5_q4': 'Operational signaling indicator',
-    'ref_top3_pct': 'Top 3 referral revenue percentage',
-    'ma_largest_pct': 'Largest MA plan revenue percentage'
+    'dim5_q4': 'Operational signaling indicator'
   };
 
   function collectRows() {
@@ -621,7 +641,7 @@
       'dim1_q1','dim1_q2','dim1_q3','dim1_q4',
       'dim2_q1','dim2_q2','dim2_q3','dim2_q4',
       'dim3_q1','dim3_q2','dim3_q3','dim3_q4',
-      'ref_top3_pct',
+      'ref_top2_pct','ref_top3_pct',
       'ma_largest_pct',
       'dim4_q1','dim4_q2','dim4_q3','dim4_q4',
       'dim5_q1','dim5_q2','dim5_q3','dim5_q4'
