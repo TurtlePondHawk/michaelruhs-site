@@ -150,8 +150,8 @@
       </p>
       <p class="subtle">
         <strong>Threshold anchors:</strong><br/>
-        If your top 2 referral sources exceed 40% of total revenue, you are strategically exposed.<br/>
-        If your top 3 exceed 55%, you are structurally dependent.
+        If your top 2 referral sources exceed 40% of total revenue, a change in behavior from one decision-maker could noticeably reduce annual revenue.<br/>
+        If your top 3 exceed 55%, your revenue depends heavily on a small cluster of people or institutions.
       </p>
 
       <div class="q">
@@ -210,8 +210,8 @@
       </p>
       <p class="subtle">
         <strong>Threshold anchors:</strong><br/>
-        If one Medicare Advantage plan exceeds 35–40% of revenue, leverage risk increases materially.<br/>
-        If 50%+ revenue is MA-driven without differentiated contracts, margin compression risk is elevated.
+        If one Medicare Advantage plan exceeds 35–40% of revenue, rate adjustments or authorization friction can materially affect margin and cash flow.<br/>
+        If 50%+ revenue is MA-driven without differentiated contracts, small reimbursement changes can compound quickly.
       </p>
 
       <div class="q">
@@ -424,6 +424,56 @@
     const maFlagHigh = !Number.isNaN(maLargestPct) && maLargestPct >= 40;
     const maFlagMed = !Number.isNaN(maLargestPct) && maLargestPct >= 35 && maLargestPct < 40;
 
+    // Dynamic consequence messaging (requested)
+    let referralDynamic = '';
+    let payorDynamic = '';
+
+    if (!Number.isNaN(refTop3Pct)) {
+      if (refTop3Pct >= 55) {
+        referralDynamic = `
+          <p class="warning">
+            Your top 3 referral sources represent <strong>${refTop3Pct}%</strong> of revenue.
+            This means your revenue depends heavily on a small cluster of people or institutions.
+            A policy change, personnel shift, or panel adjustment from one source could materially affect overall performance.
+          </p>`;
+      } else if (refTop3Pct >= 40) {
+        referralDynamic = `
+          <p class="warning">
+            Your top 3 referral sources represent <strong>${refTop3Pct}%</strong> of revenue.
+            A change in behavior from one major source could noticeably reduce annual revenue.
+            Quiet erosion may occur before internal metrics reflect it.
+          </p>`;
+      } else {
+        referralDynamic = `
+          <p>
+            Your top 3 referral sources represent <strong>${refTop3Pct}%</strong> of revenue.
+            This appears relatively diversified. Keep monitoring early behavior shifts so you see change before it hits operations.
+          </p>`;
+      }
+    }
+
+    if (!Number.isNaN(maLargestPct)) {
+      if (maLargestPct >= 40) {
+        payorDynamic = `
+          <p class="warning">
+            Your largest Medicare Advantage plan represents <strong>${maLargestPct}%</strong> of revenue.
+            At this level, rate adjustments or authorization friction can materially compress margin and affect cash flow stability.
+          </p>`;
+      } else if (maLargestPct >= 35) {
+        payorDynamic = `
+          <p class="warning">
+            Your largest Medicare Advantage plan represents <strong>${maLargestPct}%</strong> of revenue.
+            Leverage risk is elevated. Small reimbursement shifts can compound over time.
+          </p>`;
+      } else {
+        payorDynamic = `
+          <p>
+            Your largest Medicare Advantage plan represents <strong>${maLargestPct}%</strong> of revenue.
+            This appears moderate. Continue monitoring contract leverage and authorization patterns.
+          </p>`;
+      }
+    }
+
     // Build results HTML
     const h = [];
     h.push('<h3>Snapshot Results</h3>');
@@ -439,11 +489,11 @@
 
     // Threshold notes
     const thresholdNotes = [];
-    if (refFlagHigh) thresholdNotes.push('<p class="warning">Referral concentration threshold: Top 3 referrals ≥ 55% indicates structural dependency.</p>');
-    else if (refFlagMed) thresholdNotes.push('<p class="warning">Referral concentration threshold: Above 40% suggests strategic exposure.</p>');
+    if (refFlagHigh) thresholdNotes.push('<p class="warning">Referral concentration threshold: Top 3 referrals ≥ 55% means your revenue depends heavily on a small cluster of people or institutions.</p>');
+    else if (refFlagMed) thresholdNotes.push('<p class="warning">Referral concentration threshold: Above 40% means a change in behavior from one major source could noticeably reduce annual revenue.</p>');
 
-    if (maFlagHigh) thresholdNotes.push('<p class="warning">Payor concentration threshold: Largest MA plan ≥ 40% suggests materially increased leverage risk.</p>');
-    else if (maFlagMed) thresholdNotes.push('<p class="warning">Payor concentration threshold: Largest MA plan ≥ 35% suggests elevated leverage risk.</p>');
+    if (maFlagHigh) thresholdNotes.push('<p class="warning">Payor concentration threshold: Largest MA plan ≥ 40% means rate adjustments or authorization friction can materially compress margin and affect cash flow stability.</p>');
+    else if (maFlagMed) thresholdNotes.push('<p class="warning">Payor concentration threshold: Largest MA plan ≥ 35% means leverage risk is elevated and small reimbursement shifts can compound over time.</p>');
 
     // Guidance block (V2)
     const guidance =
@@ -463,10 +513,12 @@
       <p>2–3: <strong>Preference Instability</strong>. This is where preference often erodes quietly over time.</p>
       <p>4: <strong>Defensible Position (For Now)</strong>. Less likely to be the reason you are deprioritized, but still requires reinforcement.</p>
 
-      <p><strong>Concentration thresholds</strong></p>
+      <p><strong>Concentration thresholds (plain language)</strong></p>
       <p>
-        Referral: If your top 2 referral sources exceed 40% of total revenue, you are strategically exposed. If your top 3 exceed 55%, you are structurally dependent.<br/>
-        Payor: If one MA plan exceeds 35–40% of revenue, leverage risk increases materially. If 50%+ revenue is MA-driven without differentiated contracts, margin compression risk is elevated.
+        Referral: If your top 2 referral sources exceed 40% of total revenue, a change in behavior from one decision-maker could noticeably reduce annual revenue.
+        If your top 3 exceed 55%, your revenue depends heavily on a small cluster of people or institutions.<br/>
+        Payor: If one Medicare Advantage plan exceeds 35–40% of revenue, rate adjustments or authorization friction can materially affect margin and cash flow.
+        If 50%+ revenue is MA-driven without differentiated contracts, small reimbursement changes can compound quickly.
       </p>
 
       ${thresholdNotes.join('')}
@@ -497,7 +549,8 @@
       <h4>Final Note</h4>
       <p>This Snapshot is not trivial. It reflects how the partners and customers you depend on likely see you when making real decisions. Treat it with the same seriousness they do.</p>`;
 
-    resultsDiv.innerHTML = h.join('') + guidance;
+    // Insert dynamic consequence blocks before the guidance (requested)
+    resultsDiv.innerHTML = h.join('') + referralDynamic + payorDynamic + guidance;
     resultsDiv.classList.remove('hidden');
 
     // GA4 completion tracking
