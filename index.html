@@ -503,152 +503,157 @@
     else if (maFlagMed) thresholdNotes.push('<p class="warning">Payor threshold: Largest MA ≥ 35% means leverage risk is elevated and small reimbursement shifts can compound over time.</p>');
 
     const guidance =
-      `<h4>What to Know Next</h4>
-      <p><strong>How scoring works</strong></p>
-      <p>Each scored section contains four Yes or No questions. Each section scores from 0 to 4. Do not combine sections or calculate an overall score. Each dimension stands on its own.</p>
+  `<h4>What to Know Next</h4>
+  <p><strong>How scoring works</strong></p>
+  <p>Each scored section contains four Yes or No questions. Each section scores from 0 to 4. Do not combine sections or calculate an overall score. Each dimension stands on its own.</p>
 
-      <p><strong>What this Snapshot is actually telling you</strong></p>
-      <p>
-        This Snapshot isn't measuring effort or intent. It reflects how your agency likely appears when you are not in the room.
-        It is designed to mirror how referral partners and payors evaluate defensibility: clarity, credibility, concentration exposure, and operational signal.
-        Strong internal performance does not always translate to external preference.
-      </p>
-
-      <p><strong>How to interpret your scores</strong></p>
-      <p>0–1: <strong>Structural Exposure Identified</strong>. Vulnerability is likely present, even if day-to-day operations feel stable.</p>
-      <p>2–3: <strong>Preference Instability</strong>. This is where preference often erodes quietly over time.</p>
-      <p>4: <strong>Defensible Position (For Now)</strong>. Less likely to be the reason you are deprioritized, but still requires reinforcement.</p>
-
-      <p><strong>Concentration thresholds (plain language)</strong></p>
-      <p>
-        Referral: If your top 2 referral sources exceed 40% of total revenue, a change in behavior from one decision-maker could noticeably reduce annual revenue.
-        If your top 3 exceed 55%, your revenue depends heavily on a small cluster of people or institutions.<br/>
-        Payor: If one Medicare Advantage plan exceeds 35–40% of revenue, rate adjustments or authorization friction can materially affect margin and cash flow.
-        If 50%+ revenue is MA-driven without differentiated contracts, small reimbursement changes can compound quickly.
-      </p>
-
-      ${thresholdNotes.join('')}
-
-      <p><strong>Time-lag warning</strong></p>
-      <p>Most agencies do not see referral erosion in operational metrics until 6–9 months after external preference has already shifted.</p>
-
-      <p><strong>Revenue sensitivity illustration</strong></p>
-      <p>
-        If top 2 referrals represent 45% of revenue: a 20% reduction from one source ≈ 9% total revenue impact; a 30% reduction ≈ 13.5%.<br/>
-        If largest MA plan represents 40% of revenue: a 3% rate compression can materially reduce EBITDA; increased authorization friction can create cash flow volatility.
-      </p>
-
-      <div class="callout">
-        <h4>Structural Risk Brief</h4>
-
-        <p>
-          For agencies that want a formal second assessment of structural exposure.
-        </p>
-      
-        <p>
-          The <strong>Structural Risk Brief</strong> is a document-based analysis of referral concentration, Medicare Advantage mix, and dependency risk within your current revenue structure.
-        </p>
-        
-        <ul>
-          <li>No calls required.</li>
-          <li>No workshops.</li>
-          <li>No sales process.</li>
-          <li>Delivery: 5 business days</li>
-          <li>Format: Written brief (PDF)</li>
-          <li>Rate: $975 (founding rate)</li>
-          <li>Modeling begins upon receipt.</li>
-        </ul>
-
-        <h4>Scope</h4>
-        
-        <p>
-          The brief includes:
-        </p>
-      
-      <ul>
-        <li>Referral concentration modeling (Top 2 / Top 3 dependency stress test)</li>
-        <li>Medicare Advantage exposure sensitivity</li>
-        <li>Structural fragility indicators</li>
-        <li>Revenue stability scenario analysis</li>
-        <li>Prioritized stabilization sequence (3–5 actions)</li>
-      </ul>
-      
-        <p>
-          This is not:
-        </p>
-      
-      <ul>
-        <li>a marketing audit.</li>
-        <li>an operational review.</li>
-        <li>advisory retainer work.</li>
-      </ul>
-
-        <p>
-        It is a defined structural exposure assessment.
-        </p>
-
-        <h4>Submission Requirements</h4>
-        
-        <p>
-          Provide:
-        </p>
-      
-      <ul>
-        <li>Your five Snapshot section scores</li>
-        <li>Top 2 referral percentages</li>
-        <li>Top 3 referral percentages</li>
-        <li>Largest MA percentage</li>
-        <li>Approximate annual revenue</li>
-        <li>One sentence describing your primary structural concern</li>
-      </ul>
-        
-        <p>
-          You will receive a secure payment link. Work begins once submitted.
-          No ongoing commitment.
-          Just a defined structural exposure assessment that you can act on.
-        </p>
-        
-        <p>
-          <a href="mailto:michael@michaelruhs.com?subject=Structural%20Risk%20Brief%20Request&body=Paste%20your%205%20scores%20here%3A%0A%0ATop%202%20referral%25%3A%0ATop%203%20referral%25%3A%0ALargest%20MA%25%3A%0A%0AApproximate%20annual%20revenue%3A%0ADescribe%20your%20primary%20structural%20concern%3A%0A">
-            Request Exposure Modeling (email)
-          </a>
-        </p>
-
-        <p class="subtle">An objective analysis of where structural risk exists and what should be addressed first.</p>
-
-      <section style="margin-top:40px;">
-  <h3>Structural Risk Brief — Common Questions</h3>
-
-  <details>
-    <summary>What exactly is the Structural Risk Brief?</summary>
-    <p>A document-based structural exposure assessment of referral concentration and MA dependency. It models sensitivity under modest stress assumptions and identifies stabilization priorities.</p>
-  </details>
-
-  <details>
-    <summary>Why is there no introductory call?</summary>
-    <p>The Brief is designed to be document-driven. Submitted data is sufficient for modeling structural exposure. Clarifications are handled via email if needed.</p>
-  </details>
-
-  <details>
-    <summary>Why is payment required upfront?</summary>
-    <p>The Brief involves allocated modeling time. Work begins upon receipt of payment and is non-refundable once analysis starts.</p>
-  </details>
-
-  <details>
-    <summary>What happens after delivery?</summary>
-    <p>Nothing unless you request additional work. The Brief is a contained assessment with no ongoing obligation.</p>
-  </details>
-
-  <p style="margin-top:15px;">
-    <a id="faqLink" href="brief-faq.html" target="_blank" rel="noopener">View full FAQ →</a>
+  <p><strong>What this Snapshot is actually telling you</strong></p>
+  <p>
+    This Snapshot isn't measuring effort or intent. It reflects how your agency likely appears when you are not in the room.
+    It is designed to mirror how referral partners and payors evaluate defensibility: clarity, credibility, concentration exposure, and operational signal.
+    Strong internal performance does not always translate to external preference.
   </p>
-</section>
-        
-      </div>
 
-      <h4>Final Note</h4>
-      <p>This Snapshot is not trivial. It reflects how the partners and customers you depend on likely see you when making real decisions. Treat it with the same seriousness they do.</p>`;
+  <p><strong>How to interpret your scores</strong></p>
+  <p>0–1: <strong>Structural Exposure Identified</strong>. Vulnerability is likely present, even if day-to-day operations feel stable.</p>
+  <p>2–3: <strong>Preference Instability</strong>. This is where preference often erodes quietly over time.</p>
+  <p>4: <strong>Defensible Position (For Now)</strong>. Less likely to be the reason you are deprioritized, but still requires reinforcement.</p>
 
+  <p><strong>Concentration thresholds (plain language)</strong></p>
+  <p>
+    Referral: If your top 2 referral sources exceed 40% of total revenue, a change in behavior from one decision-maker could noticeably reduce annual revenue.
+    If your top 3 exceed 55%, your revenue depends heavily on a small cluster of people or institutions.<br/>
+    Payor: If one Medicare Advantage plan exceeds 35–40% of revenue, rate adjustments or authorization friction can materially affect margin and cash flow.
+    If 50%+ revenue is MA-driven without differentiated contracts, small reimbursement changes can compound quickly.
+  </p>
+
+  ${thresholdNotes.join('')}
+
+  <p><strong>Time-lag warning</strong></p>
+  <p>Most agencies do not see referral erosion in operational metrics until 6–9 months after external preference has already shifted.</p>
+
+  <p><strong>Revenue sensitivity illustration</strong></p>
+  <p>
+    If top 2 referrals represent 45% of revenue: a 20% reduction from one source ≈ 9% total revenue impact; a 30% reduction ≈ 13.5%.<br/>
+    If largest MA plan represents 40% of revenue: a 3% rate compression can materially reduce EBITDA; increased authorization friction can create cash flow volatility.
+  </p>
+
+  <p class="subtle">
+    <strong>Note:</strong> Your results are displayed only on this page and are not stored on a server.
+    If you refresh or close this tab, you may need to re-score.
+    To retain a copy, use <strong>Export CSV</strong> or print to PDF before leaving.
+  </p>
+
+  <div class="callout">
+    <h4>Structural Risk Brief</h4>
+
+    <p>
+      For agencies that want a formal second assessment of structural exposure.
+    </p>
+  
+    <p>
+      The <strong>Structural Risk Brief</strong> is a document-based analysis of referral concentration, Medicare Advantage mix, and dependency risk within your current revenue structure.
+    </p>
+    
+    <ul>
+      <li>No calls required.</li>
+      <li>No workshops.</li>
+      <li>No sales process.</li>
+      <li>Delivery: 5 business days</li>
+      <li>Format: Written brief (PDF)</li>
+      <li>Rate: $975 (founding rate)</li>
+      <li>Modeling begins upon receipt.</li>
+    </ul>
+
+    <h4>Scope</h4>
+    
+    <p>
+      The brief includes:
+    </p>
+  
+  <ul>
+    <li>Referral concentration modeling (Top 2 / Top 3 dependency stress test)</li>
+    <li>Medicare Advantage exposure sensitivity</li>
+    <li>Structural fragility indicators</li>
+    <li>Revenue stability scenario analysis</li>
+    <li>Prioritized stabilization sequence (3–5 actions)</li>
+  </ul>
+  
+    <p>
+      This is not:
+    </p>
+  
+  <ul>
+    <li>a marketing audit.</li>
+    <li>an operational review.</li>
+    <li>advisory retainer work.</li>
+  </ul>
+
+    <p>
+    It is a defined structural exposure assessment.
+    </p>
+
+    <h4>Submission Requirements</h4>
+    
+    <p>
+      Provide:
+    </p>
+  
+  <ul>
+    <li>Your five Snapshot section scores</li>
+    <li>Top 2 referral percentages</li>
+    <li>Top 3 referral percentages</li>
+    <li>Largest MA percentage</li>
+    <li>Approximate annual revenue</li>
+    <li>One sentence describing your primary structural concern</li>
+  </ul>
+    
+    <p>
+      You will receive a secure payment link. Work begins once submitted.
+      No ongoing commitment.
+      Just a defined structural exposure assessment that you can act on.
+    </p>
+    
+    <p>
+      <a href="mailto:michael@michaelruhs.com?subject=Structural%20Risk%20Brief%20Request&body=Paste%20your%205%20scores%20here%3A%0A%0ATop%202%20referral%25%3A%0ATop%203%20referral%25%3A%0ALargest%20MA%25%3A%0A%0AApproximate%20annual%20revenue%3A%0ADescribe%20your%20primary%20structural%20concern%3A%0A">
+        Request Exposure Modeling (email)
+      </a>
+    </p>
+
+    <p class="subtle">An objective analysis of where structural risk exists and what should be addressed first.</p>
+
+  <section style="margin-top:40px;">
+    <h3>Structural Risk Brief — Common Questions</h3>
+
+    <details>
+      <summary>What exactly is the Structural Risk Brief?</summary>
+      <p>A document-based structural exposure assessment of referral concentration and MA dependency. It models sensitivity under modest stress assumptions and identifies stabilization priorities.</p>
+    </details>
+
+    <details>
+      <summary>Why is there no introductory call?</summary>
+      <p>The Brief is designed to be document-driven. Submitted data is sufficient for modeling structural exposure. Clarifications are handled via email if needed.</p>
+    </details>
+
+    <details>
+      <summary>Why is payment required upfront?</summary>
+      <p>The Brief involves allocated modeling time. Work begins upon receipt of payment and is non-refundable once analysis starts.</p>
+    </details>
+
+    <details>
+      <summary>What happens after delivery?</summary>
+      <p>Nothing unless you request additional work. The Brief is a contained assessment with no ongoing obligation.</p>
+    </details>
+
+    <p style="margin-top:15px;">
+      <a id="faqLink" href="brief-faq.html?v=1" target="_blank" rel="noopener">View full FAQ →</a>
+    </p>
+  </section>
+  
+  </div>
+
+  <h4>Final Note</h4>
+  <p>This Snapshot is not trivial. It reflects how the partners and customers you depend on likely see you when making real decisions. Treat it with the same seriousness they do.</p>`;
     resultsDiv.innerHTML = h.join('') + referralDynamic + payorDynamic + guidance;
     resultsDiv.classList.remove('hidden');
 
