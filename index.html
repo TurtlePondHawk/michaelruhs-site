@@ -640,7 +640,7 @@
   </details>
 
   <p style="margin-top:15px;">
-    <a href="brief-faq.html" target="_blank" rel="noopener">View full FAQ →</a>
+    <a id="faqLink" href="brief-faq.html" target="_blank" rel="noopener">View full FAQ →</a>
   </p>
 </section>
         
@@ -688,6 +688,16 @@
   });
 </script>
 
+<script>
+  // Force FAQ link to open in a new tab even if target is ignored
+  document.addEventListener('click', function(e) {
+    const a = e.target && e.target.closest ? e.target.closest('#faqLink') : null;
+    if (!a) return;
+    e.preventDefault();
+    window.open(a.getAttribute('href'), '_blank', 'noopener');
+  });
+</script>
+  
 <footer>
   <p>&copy; 2026 Michael Ruhs. All Rights Reserved.</p>
 </footer>
