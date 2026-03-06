@@ -366,8 +366,7 @@
   }
 
   const exportBtn = document.getElementById('exportBtn');
-if (exportBtn) {
-  exportBtn.addEventListener('click', function() {
+  exportBtn?.addEventListener('click', function() {
     const answers = collectAnswers();
     const csv = toCSV(answers);
 
@@ -381,7 +380,6 @@ if (exportBtn) {
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
   });
-}
 </script>
 
 <script>
@@ -561,7 +559,7 @@ if (exportBtn) {
     To retain a copy, use <strong>Export CSV</strong> or print to PDF before leaving.
   </p>
 
-    <div class="callout">
+  <div class="callout">
   <h4>Operator Validation</h4>
 
   <p>
@@ -572,74 +570,63 @@ if (exportBtn) {
   Feedback goes only to Michael Ruhs. Please do not include PHI.
   </p>
 
-  <form action="https://docs.google.com/forms/d/e/1FAIpQLSel_g8BZsSfhRDDx2eFAq_3JduFVG6RLQNFhUgCLyYOOTlwfA/formResponse" method="POST" target="_blank">
+<form action="https://docs.google.com/forms/d/e/1FAIpQLSel_g8BZsSfhRDDx2eFAq_3JduFVG6RLQNFhUgCLyYOOTlwfA/formResponse" method="POST" target="_blank">
 
-  <p><strong>Did the Snapshot results reflect the real structural risks your agency faces today?</strong></p>
-  <label><input type="radio" name="entry.1601035563" value="Very accurate" required> Very accurate</label><br>
-  <label><input type="radio" name="entry.1601035563" value="Mostly accurate"> Mostly accurate</label><br>
-  <label><input type="radio" name="entry.1601035563" value="Somewhat off"> Somewhat off</label><br>
-  <label><input type="radio" name="entry.1601035563" value="Not accurate"> Not accurate</label>
-
-  <br><br>
-
-  <p><strong>Did the Snapshot highlight anything you had not previously quantified or thought about this way?</strong></p>
-  <label><input type="radio" name="entry.1008741923" value="Yes" required> Yes</label><br>
-  <label><input type="radio" name="entry.1008741923" value="Maybe"> Maybe</label><br>
-  <label><input type="radio" name="entry.1008741923" value="No"> No</label>
-
-  <br><br>
-
-  <p><strong>How did the referral and Medicare Advantage thresholds feel to you?</strong></p>
-  <label><input type="radio" name="entry.341218761" value="About right" required> About right</label><br>
-  <label><input type="radio" name="entry.341218761" value="Too conservative"> Too conservative</label><br>
-  <label><input type="radio" name="entry.341218761" value="Too aggressive"> Too aggressive</label><br>
-  <label><input type="radio" name="entry.341218761" value="Unsure"> Unsure</label>
-
-  <br><br>
-
-  <p><strong>After seeing the results, would you want deeper analysis on this topic?</strong></p>
-  <label><input type="radio" name="entry.1240824445" value="Yes" required> Yes</label><br>
-  <label><input type="radio" name="entry.1240824445" value="Maybe"> Maybe</label><br>
-  <label><input type="radio" name="entry.1240824445" value="No"> No</label>
-
-  <br><br>
-
-  <p><strong>What part of the Snapshot should be improved first?</strong></p>
-  <label><input type="radio" name="entry.1945757420" value="Questions themselves" required> Questions themselves</label><br>
-  <label><input type="radio" name="entry.1945757420" value="Results interpretation"> Results interpretation</label><br>
-  <label><input type="radio" name="entry.1945757420" value="Threshold benchmarks"> Threshold benchmarks</label><br>
-  <label><input type="radio" name="entry.1945757420" value="More operational next steps"> More operational next steps</label><br>
-  <label><input type="radio" name="entry.1945757420" value="Nothing — it works as is"> Nothing — it works as is</label>
-
-  <br><br>
-
-  <p><strong>If one result or statement felt wrong or overstated, which one?</strong></p>
-  <textarea name="entry.110489111" rows="3" style="width:100%;"></textarea>
-
-  <br><br>
-
-  <p><strong>Can I follow up with one question by email?</strong></p>
-  <label><input type="radio" name="entry.1094178020" value="Yes" required> Yes</label><br>
-  <label><input type="radio" name="entry.1094178020" value="No"> No</label>
-
-  <br><br>
-  
-<p><strong>If yes, what email should I use? (optional)</strong></p>
-<input
-  type="email"
-  name="entry.68172428"
-  placeholder="you@example.com"
-  style="width:100%; padding:6px;"
-/>
-<p class="subtle">Only used for one follow-up question. Do not include PHI.</p>
+<p><strong>Did the Snapshot results reflect the real structural risks your agency faces today?</strong></p>
+<label><input type="radio" name="entry.1601035563" value="Very accurate" required> Very accurate</label><br>
+<label><input type="radio" name="entry.1601035563" value="Mostly accurate"> Mostly accurate</label><br>
+<label><input type="radio" name="entry.1601035563" value="Somewhat off"> Somewhat off</label><br>
+<label><input type="radio" name="entry.1601035563" value="Not accurate"> Not accurate</label>
 
 <br><br>
 
-  <button type="submit">Submit Feedback</button>
+<p><strong>Did the Snapshot highlight anything you had not previously quantified or thought about this way?</strong></p>
+<label><input type="radio" name="entry.1008741923" value="Yes" required> Yes</label><br>
+<label><input type="radio" name="entry.1008741923" value="Maybe"> Maybe</label><br>
+<label><input type="radio" name="entry.1008741923" value="No"> No</label>
 
-  </form>
+<br><br>
 
-  </div>`;
+<p><strong>How did the referral and Medicare Advantage thresholds feel to you?</strong></p>
+<label><input type="radio" name="entry.341218761" value="About right" required> About right</label><br>
+<label><input type="radio" name="entry.341218761" value="Too conservative"> Too conservative</label><br>
+<label><input type="radio" name="entry.341218761" value="Too aggressive"> Too aggressive</label><br>
+<label><input type="radio" name="entry.341218761" value="Unsure"> Unsure</label>
+
+<br><br>
+
+<p><strong>After seeing the results, would you want deeper analysis on this topic?</strong></p>
+<label><input type="radio" name="entry.1240824445" value="Yes" required> Yes</label><br>
+<label><input type="radio" name="entry.1240824445" value="Maybe"> Maybe</label><br>
+<label><input type="radio" name="entry.1240824445" value="No"> No</label>
+
+<br><br>
+
+<p><strong>What part of the Snapshot should be improved first?</strong></p>
+<label><input type="radio" name="entry.1945757420" value="Questions themselves" required> Questions themselves</label><br>
+<label><input type="radio" name="entry.1945757420" value="Results interpretation"> Results interpretation</label><br>
+<label><input type="radio" name="entry.1945757420" value="Threshold benchmarks"> Threshold benchmarks</label><br>
+<label><input type="radio" name="entry.1945757420" value="More operational next steps"> More operational next steps</label><br>
+<label><input type="radio" name="entry.1945757420" value="Nothing — it works as is"> Nothing — it works as is</label>
+
+<br><br>
+
+<p><strong>If one result or statement felt wrong or overstated, which one?</strong></p>
+<textarea name="entry.110489111" rows="3" style="width:100%;"></textarea>
+
+<br><br>
+
+<p><strong>Can I follow up with one question by email?</strong></p>
+<label><input type="radio" name="entry.1094178020" value="Yes" required> Yes</label><br>
+<label><input type="radio" name="entry.1094178020" value="No"> No</label>
+
+<br><br>
+
+<button type="submit">Submit Feedback</button>
+
+</form>
+
+</div>;
 
     resultsDiv.innerHTML = h.join('') + guidance;
     resultsDiv.classList.remove('hidden');
