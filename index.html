@@ -559,7 +559,7 @@
     To retain a copy, use <strong>Export CSV</strong> or print to PDF before leaving.
   </p>
 
-  <div class="callout">
+    <div class="callout">
   <h4>Operator Validation</h4>
 
   <p>
@@ -570,7 +570,7 @@
   Feedback goes only to Michael Ruhs. Please do not include PHI.
   </p>
 
-<form action="https://docs.google.com/forms/d/e/1FAIpQLSel_g8BZsSfhRDDx2eFAq_3JduFVG6RLQNFhUgCLyYOOTlwfA/formResponse" method="POST" target="_blank">
+<form id="feedbackForm" action="https://docs.google.com/forms/d/e/1FAIpQLSel_g8BZsSfhRDDx2eFAq_3JduFVG6RLQNFhUgCLyYOOTlwfA/formResponse" method="POST" target="_blank">
 
 <p><strong>Did the Snapshot results reflect the real structural risks your agency faces today?</strong></p>
 <label><input type="radio" name="entry.1601035563" value="Very accurate" required> Very accurate</label><br>
@@ -607,7 +607,7 @@
 <label><input type="radio" name="entry.1945757420" value="Results interpretation"> Results interpretation</label><br>
 <label><input type="radio" name="entry.1945757420" value="Threshold benchmarks"> Threshold benchmarks</label><br>
 <label><input type="radio" name="entry.1945757420" value="More operational next steps"> More operational next steps</label><br>
-<label><input type="radio" name="entry.1945757420" value="Nothing — it works as is"> Nothing — it works as is</label>
+<label><input type="radio" name="entry.1945757420" value="Nothing - it works as is"> Nothing - it works as is</label>
 
 <br><br>
 
@@ -620,7 +620,21 @@
 <label><input type="radio" name="entry.1094178020" value="Yes" required> Yes</label><br>
 <label><input type="radio" name="entry.1094178020" value="No"> No</label>
 
-<br><br>
+<div id="followupEmailWrap" class="hidden" style="margin-top:12px;">
+  <p><strong>If yes, what email should I use?</strong></p>
+  <input
+    type="email"
+    name="entry.68172428"
+    id="followupEmail"
+    placeholder="you@agency.com"
+    style="width:100%; max-width:420px; padding:.5rem;"
+  />
+  <p class="subtle" style="margin-top:.35rem;">
+    Optional unless you want follow-up.
+  </p>
+</div>
+
+<br>
 
 <button type="submit">Submit Feedback</button>
 
@@ -628,8 +642,35 @@
 
 </div>`;
 
-    resultsDiv.innerHTML = h.join('') + guidance;
+        resultsDiv.innerHTML = h.join('') + guidance;
     resultsDiv.classList.remove('hidden');
+
+    // Wire up conditional follow-up email field
+    const followupYes = resultsDiv.querySelector('input[name="entry.1094178020"][value="Yes"]');
+    const followupNo = resultsDiv.querySelector('input[name="entry.1094178020"][value="No"]');
+    const followupEmailWrap = resultsDiv.querySelector('#followupEmailWrap');
+    const followupEmail = resultsDiv.querySelector('#followupEmail');
+
+    function syncFollowupEmailVisibility() {
+      if (!followupEmailWrap || !followupEmail) return;
+
+      if (followupYes && followupYes.checked) {
+        followupEmailWrap.classList.remove('hidden');
+      } else {
+        followupEmailWrap.classList.add('hidden');
+        followupEmail.value = '';
+      }
+    }
+
+    if (followupYes) {
+      followupYes.addEventListener('change', syncFollowupEmailVisibility);
+    }
+
+    if (followupNo) {
+      followupNo.addEventListener('change', syncFollowupEmailVisibility);
+    }
+
+    syncFollowupEmailVisibility();
 
     // Scroll to results
     requestAnimationFrame(() => {
